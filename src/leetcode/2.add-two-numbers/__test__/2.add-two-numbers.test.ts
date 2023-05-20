@@ -5,7 +5,7 @@ import { ListNode } from '../types'
  * 构建链表
  */
 function createList(arr: number[]) {
-  let head = new ListNode()
+  const head = new ListNode()
   let cur = head
   for (let i = 0; i < arr.length; i++) {
     cur.next = new ListNode(arr[i])

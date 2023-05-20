@@ -13,15 +13,15 @@ function backTrace(res: string[], path: string, digits: string) {
   if (path.length === digits.length) {
     res.push(path)
   }
-  let index = path.length
+  const index = path.length
   for (const c of mp.get(digits[index]) || '') {
     backTrace(res, path + c, digits)
   }
 }
 
 export function letterCombinations(digits: string): string[] {
-  let res: string[] = []
-  let path = ''
+  const res: string[] = []
+  const path = ''
   if (!digits) return res
   backTrace(res, path, digits)
   return res

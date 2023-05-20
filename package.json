@@ -20,5 +20,8 @@
     "test": "jest",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write ."
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

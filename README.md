@@ -30,3 +30,13 @@ _那为什么选用 Typescript 而不是 Javascript 呢？_
 
    如果只想运行某个文件的测试，可以使用 `yarn test <filename>`，例如 `yarn test 1.two-sum.test.ts`。
    你甚至不必输入完整的文件名，只要输入文件名的一部分即可，例如 `yarn test two-sum`。
+
+3. 执行代码
+
+   为了摆脱繁琐的配置，我们并没有使用 babel 来转义 typescript 代码，而 nodejs 并不支持直接执行 ts 文件。
+
+   幸运的是，我们可以使用 ts-node 来执行 ts 文件，只需要在命令行中输入：
+
+   ```bash
+   npx ts-node <filepath>
+   ```

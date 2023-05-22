@@ -4,4 +4,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['prettier'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  rules: {
+    '@typescript-eslint/no-non-null-assertion': 'off',
+  },
 }

@@ -1,11 +1,11 @@
 import LinearList from './LinearList'
 import { DoublyLinkedListNode } from './ListNode'
-import { SingleLinkedList } from './SingleLinkedList'
+import { SinglyLinkedList } from './SinglyLinkedList'
 
 /**
  * 双向链表
  */
-export class DoublyLinkedList<T> extends SingleLinkedList<T> implements LinearList<T> {
+export class DoublyLinkedList<T> extends SinglyLinkedList<T> implements LinearList<T> {
   // 头节点
   protected head: DoublyLinkedListNode<T> | null = null
   // 尾节点

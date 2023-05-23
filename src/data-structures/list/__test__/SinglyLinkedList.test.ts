@@ -1,14 +1,14 @@
-import { SingleLinkedList } from '../SingleLinkedList'
+import { SinglyLinkedList } from '../SinglyLinkedList'
 
-describe('LinkedList', () => {
-  let list: SingleLinkedList<number>
+describe('SinglyLinkedList', () => {
+  let list: SinglyLinkedList<number>
 
   beforeEach(() => {
-    list = new SingleLinkedList([1, 3, 5, 7, 9])
+    list = new SinglyLinkedList([1, 3, 5, 7, 9])
   })
 
   it('create an empty list', () => {
-    expect(new SingleLinkedList().isEmpty()).toBeTruthy()
+    expect(new SinglyLinkedList().isEmpty()).toBeTruthy()
   })
 
   it('create a list with elements', () => {
@@ -18,22 +18,22 @@ describe('LinkedList', () => {
 
   it('return the head of the list', () => {
     expect(list.getHead()?.value).toBe(1)
-    expect(new SingleLinkedList().getHead()).toBeNull()
+    expect(new SinglyLinkedList().getHead()).toBeNull()
   })
 
   it('return the tail of the list', () => {
     expect(list.getTail()?.value).toBe(9)
-    expect(new SingleLinkedList().getTail()).toBeNull()
+    expect(new SinglyLinkedList().getTail()).toBeNull()
   })
 
   it('return the correct size', () => {
     expect(list.size()).toBe(5)
-    expect(new SingleLinkedList().size()).toBe(0)
+    expect(new SinglyLinkedList().size()).toBe(0)
   })
 
   it('return true if the list is empty', () => {
     expect(list.isEmpty()).toBeFalsy()
-    expect(new SingleLinkedList().isEmpty()).toBeTruthy()
+    expect(new SinglyLinkedList().isEmpty()).toBeTruthy()
   })
 
   it('clear the list', () => {
@@ -160,11 +160,11 @@ describe('LinkedList', () => {
 
   it('return the array format of the list', () => {
     expect(list.toArray()).toEqual([1, 3, 5, 7, 9])
-    expect(new SingleLinkedList().toArray()).toEqual([])
+    expect(new SinglyLinkedList().toArray()).toEqual([])
   })
 
   it('return the string format of the list', () => {
     expect(list.toString()).toBe('1,3,5,7,9')
-    expect(new SingleLinkedList().toString()).toBe('')
+    expect(new SinglyLinkedList().toString()).toBe('')
   })
 })

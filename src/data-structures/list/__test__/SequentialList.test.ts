@@ -1,14 +1,14 @@
-import { SequenceList } from '../SequenceList'
+import { SequentialList } from '../SequentialList'
 
-describe('SequenceList', () => {
-  let list: SequenceList<number>
+describe('SequentialList', () => {
+  let list: SequentialList<number>
 
   beforeEach(() => {
-    list = new SequenceList([1, 3, 5, 7, 9])
+    list = new SequentialList([1, 3, 5, 7, 9])
   })
 
   it('create an empty list', () => {
-    expect(new SequenceList().isEmpty()).toBeTruthy()
+    expect(new SequentialList().isEmpty()).toBeTruthy()
   })
 
   it('create a list with elements', () => {
@@ -18,12 +18,12 @@ describe('SequenceList', () => {
 
   it('return the correct size', () => {
     expect(list.size()).toBe(5)
-    expect(new SequenceList().size()).toBe(0)
+    expect(new SequentialList().size()).toBe(0)
   })
 
   it('return true if the list is empty', () => {
     expect(list.isEmpty()).toBeFalsy()
-    expect(new SequenceList().isEmpty()).toBeTruthy()
+    expect(new SequentialList().isEmpty()).toBeTruthy()
   })
 
   it('clear the list', () => {
@@ -146,11 +146,11 @@ describe('SequenceList', () => {
 
   it('return the array format of the list', () => {
     expect(list.toArray()).toEqual([1, 3, 5, 7, 9])
-    expect(new SequenceList().toArray()).toEqual([])
+    expect(new SequentialList().toArray()).toEqual([])
   })
 
   it('return the string format of the list', () => {
     expect(list.toString()).toBe('1,3,5,7,9')
-    expect(new SequenceList().toString()).toBe('')
+    expect(new SequentialList().toString()).toBe('')
   })
 })

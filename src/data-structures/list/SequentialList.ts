@@ -3,7 +3,7 @@ import LinearList from './LinearList'
 /**
  * 顺序表，仅仅是为了体现线性表的顺序存储结构，实际上不如直接使用数组。
  */
-export class SequenceList<T> implements LinearList<T> {
+export class SequentialList<T> implements LinearList<T> {
   public arr: T[] = []
 
   constructor(elements?: T[]) {
@@ -83,7 +83,7 @@ export class SequenceList<T> implements LinearList<T> {
    * @param index 索引
    * @param element 元素
    */
-  public insert(index: number, element: T): SequenceList<T> {
+  public insert(index: number, element: T): SequentialList<T> {
     if (index < 0 || index > this.size()) {
       throw new Error('Index out of range')
     }
@@ -95,14 +95,14 @@ export class SequenceList<T> implements LinearList<T> {
    * 在顺序表的第一个位置插入新元素 element。O(1)
    * @param element 元素
    */
-  public unshift(element: T): SequenceList<T> {
+  public unshift(element: T): SequentialList<T> {
     return this.insert(0, element)
   }
 
   /**
    * 在顺序表的最后一个位置插入新元素 element。O(1)
    */
-  public push(element: T): SequenceList<T> {
+  public push(element: T): SequentialList<T> {
     return this.insert(this.size(), element)
   }
 

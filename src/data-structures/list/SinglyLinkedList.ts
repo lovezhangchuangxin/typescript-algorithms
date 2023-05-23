@@ -1,14 +1,14 @@
 import LinearList from './LinearList'
-import { SingleLinkedListNode } from './ListNode'
+import { SinglyLinkedListNode } from './ListNode'
 
 /**
  * 单链表
  */
-export class SingleLinkedList<T> implements LinearList<T> {
+export class SinglyLinkedList<T> implements LinearList<T> {
   // 头节点
-  protected head: SingleLinkedListNode<T> | null = null
+  protected head: SinglyLinkedListNode<T> | null = null
   // 尾节点
-  protected tail: SingleLinkedListNode<T> | null = null
+  protected tail: SinglyLinkedListNode<T> | null = null
   // 链表长度
   protected _size = 0
 
@@ -19,14 +19,14 @@ export class SingleLinkedList<T> implements LinearList<T> {
   /**
    * 返回链表的头节点。O(1)
    */
-  public getHead(): SingleLinkedListNode<T> | null {
+  public getHead(): SinglyLinkedListNode<T> | null {
     return this.head
   }
 
   /**
    * 返回链表的尾节点。O(1)
    */
-  public getTail(): SingleLinkedListNode<T> | null {
+  public getTail(): SinglyLinkedListNode<T> | null {
     return this.tail
   }
 
@@ -125,11 +125,11 @@ export class SingleLinkedList<T> implements LinearList<T> {
   /**
    * 在链表的第 index 个位置插入新元素 element。O(n)
    */
-  public insert(index: number, element: T): SingleLinkedList<T> {
+  public insert(index: number, element: T): SinglyLinkedList<T> {
     if (index < 0 || index > this.size()) {
       throw new Error('Index out of range')
     }
-    const newNode = new SingleLinkedListNode(element)
+    const newNode = new SinglyLinkedListNode(element)
     // 插入头部
     if (index === 0) {
       newNode.next = this.head
@@ -160,7 +160,7 @@ export class SingleLinkedList<T> implements LinearList<T> {
   /**
    * 在链表的第一个位置插入新元素 element。O(1)
    */
-  public unshift(element: T): SingleLinkedList<T> {
+  public unshift(element: T): SinglyLinkedList<T> {
     return this.insert(0, element)
   }
 
@@ -168,7 +168,7 @@ export class SingleLinkedList<T> implements LinearList<T> {
    * 在链表的最后一个位置插入新元素 element。O(1)
    * 正是得益于尾节点的存在，才使得在链表尾部插入元素的时间复杂度为 O(1)
    */
-  public push(element: T): SingleLinkedList<T> {
+  public push(element: T): SinglyLinkedList<T> {
     return this.insert(this.size(), element)
   }
 

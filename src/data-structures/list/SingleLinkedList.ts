@@ -256,7 +256,7 @@ export class SingleLinkedList<T> implements LinearList<T> {
   }
 
   /**
-   * 返回元素 element 的后继元素。
+   * 返回元素 element 的后继元素。O(n)
    * @param element 元素
    */
   public next(element: T): T | null {

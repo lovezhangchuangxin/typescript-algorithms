@@ -14,7 +14,8 @@ export class DoublyLinkedList<T> extends SinglyLinkedList<T> implements LinearLi
   protected _size = 0
 
   public constructor(elements?: T[]) {
-    super(elements)
+    super()
+    elements?.forEach((ele) => this.push(ele))
   }
 
   /**

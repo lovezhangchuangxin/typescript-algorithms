@@ -6,11 +6,11 @@ import { SingleLinkedListNode } from './ListNode'
  */
 export class SingleLinkedList<T> implements LinearList<T> {
   // 头节点
-  private head: SingleLinkedListNode<T> | null = null
+  protected head: SingleLinkedListNode<T> | null = null
   // 尾节点
-  private tail: SingleLinkedListNode<T> | null = null
+  protected tail: SingleLinkedListNode<T> | null = null
   // 链表长度
-  private _size = 0
+  protected _size = 0
 
   public constructor(elements?: T[]) {
     elements?.forEach((ele) => this.push(ele))

@@ -48,4 +48,37 @@ describe('CustomSet', () => {
   it('return values of set', () => {
     expect(set.values()).toEqual([1, 3, 5, 7, 9])
   })
+
+  it('return the string format of set', () => {
+    expect(set.toString()).toBe('1,3,5,7,9')
+  })
+
+  it('return union of two sets', () => {
+    const otherSet = new CustomSet<number>([2, 4, 6, 8, 10])
+    const unionSet = set.union(otherSet)
+    expect(unionSet.values().sort()).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].sort())
+  })
+
+  it('return intersection of two sets', () => {
+    const otherSet = new CustomSet<number>([1, 3, 6, 8, 10, 11])
+    const intersectionSet = set.intersection(otherSet)
+    expect(intersectionSet.values()).toEqual([1, 3])
+
+    const otherSet2 = new CustomSet<number>([2, 4, 10])
+    const intersectionSet2 = set.intersection(otherSet2)
+    expect(intersectionSet2.values()).toEqual([])
+  })
+
+  it('return difference of two sets', () => {
+    const otherSet = new CustomSet<number>([1, 3, 6, 8, 10])
+    const differenceSet = set.difference(otherSet)
+    expect(differenceSet.values()).toEqual([5, 7, 9])
+  })
+
+  it('return true if set is subset of other set', () => {
+    const otherSet = new CustomSet<number>([1, 3, 5, 7, 9, 11])
+    expect(set.isSubsetOf(otherSet)).toBeTruthy()
+    const otherSet2 = new CustomSet<number>([1, 3, 5, 7])
+    expect(set.isSubsetOf(otherSet2)).toBeFalsy()
+  })
 })

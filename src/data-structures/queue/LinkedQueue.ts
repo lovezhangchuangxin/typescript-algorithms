@@ -1,11 +1,11 @@
-import { SingleLinkedList } from '../list/SingleLinkedList'
+import { SinglyLinkedList } from '../list/SinglyLinkedList'
 import Queue from './Queue'
 
 /**
  * 链式队列，使用单链表实现
  */
 export default class LinkedQueue<T> implements Queue<T> {
-  protected list: SingleLinkedList<T> = new SingleLinkedList<T>()
+  protected list: SinglyLinkedList<T> = new SinglyLinkedList<T>()
 
   constructor(elements?: T[]) {
     if (elements) {
@@ -31,7 +31,7 @@ export default class LinkedQueue<T> implements Queue<T> {
    * 清空队列。O(1)
    */
   public clear(): void {
-    this.list = new SingleLinkedList<T>()
+    this.list = new SinglyLinkedList<T>()
   }
 
   /**

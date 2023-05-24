@@ -1,11 +1,11 @@
-import { SingleLinkedList } from '../list/SingleLinkedList'
+import { SinglyLinkedList } from '../list/SinglyLinkedList'
 import Stack from './Stack'
 
 /**
  * 链栈，使用单链表实现
  */
 export default class LinkedStack<T> implements Stack<T> {
-  protected list: SingleLinkedList<T> = new SingleLinkedList<T>()
+  protected list: SinglyLinkedList<T> = new SinglyLinkedList<T>()
 
   constructor(elements?: T[]) {
     if (elements) {
